@@ -14,20 +14,15 @@ class appTest {
 
     @Test
     void inputTest() {
-       /* InputStream original = System.in;
-        String inputString = "1" + System.lineSeparator() + "2" + System.lineSeparator() + "3" + System.lineSeparator() + "4" + System.lineSeparator() +  "5" + System.lineSeparator();
-        byte[] inputs = inputString.getBytes();
-        InputStream input = new ByteArrayInputStream(inputs);
-        System.setIn(input);
-        System.setIn(original); */
+        InputStream original = System.in;
+        String inputs = "1\n2\n3\n4\n5";
+        InputStream in = new ByteArrayInputStream(inputs.getBytes());
+        System.setIn(in);
+
 
         assertEquals(1, input());
-        assertEquals(2, input());
-        assertEquals(3, input());
-        assertEquals(4, input());
-        assertEquals(5, input());
 
-        //System.setIn(original);
+        System.setIn(original);
     }
 
 }
