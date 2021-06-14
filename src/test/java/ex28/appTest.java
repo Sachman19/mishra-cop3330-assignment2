@@ -14,11 +14,12 @@ class appTest {
 
     @Test
     void inputTest() {
-        InputStream original = System.in;
+       /* InputStream original = System.in;
         String inputString = "1" + System.lineSeparator() + "2" + System.lineSeparator() + "3" + System.lineSeparator() + "4" + System.lineSeparator() +  "5" + System.lineSeparator();
         byte[] inputs = inputString.getBytes();
         InputStream input = new ByteArrayInputStream(inputs);
         System.setIn(input);
+        System.setIn(original); */
 
         assertEquals(1, input());
         assertEquals(2, input());
@@ -26,7 +27,7 @@ class appTest {
         assertEquals(4, input());
         assertEquals(5, input());
 
-        System.setIn(original);
+        //System.setIn(original);
     }
 
 }
