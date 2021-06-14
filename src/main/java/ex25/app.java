@@ -11,7 +11,7 @@ public class app {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("What is your password?");
+        System.out.print("What is your password? ");
         String password = input.nextLine();
 
         switch(passwordValidator(password)){
