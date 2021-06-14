@@ -32,6 +32,6 @@ public class app {
         }
     }
     public static int calcBPM(int hr, int age, double intensity){
-        return (int) (((220 - age) - hr) * intensity) + hr;
+        return (int) Math.round((((220 - age) - hr) * intensity) + hr);
     }
 }
