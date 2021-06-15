@@ -19,18 +19,8 @@ public class app {
         infoList.add(initializeMap("Jacquelyn", "Jackson", "DBA", ""));
         infoList.add(initializeMap("Sally", "Webber", "Web Developer", "2015-12-18"));
 
-        infoList = comparison(infoList, "lName");
-
-
-        System.out.printf("%s\n", infoList.get(0).get("fName"));
-        System.out.printf("%s\n", infoList.get(1).get("fName"));
-        System.out.printf("%s\n", infoList.get(2).get("fName"));
-        System.out.printf("%s\n", infoList.get(3).get("fName"));
-        System.out.printf("%s\n", infoList.get(4).get("fName"));
-        System.out.printf("%s\n", infoList.get(5).get("fName"));
-
-
-
+        comparison(infoList, "lName");
+        printChart(infoList);
     }
     public static Map<String, String> initializeMap(String fName, String lName, String pos, String sep) {
         Map<String, String> info = new HashMap<>();
@@ -43,7 +33,7 @@ public class app {
     }
 
 
-    public static List<Map<String, String>> comparison(List<Map<String, String>> array, String key){
+    public static void comparison(List<Map<String, String>> array, String key){
         Map<String, String> temp;
 
         for(int i = 0; i < array.size(); i++){
@@ -54,8 +44,16 @@ public class app {
                 array.set(j, temp);
            }
         }
-
-        return array;
     }
 
+    public static void printChart(List<Map<String, String>> infoList){
+        System.out.print("Name\t\t\t\t | Position\t\t\t| Separation Date\t\n");
+        System.out.print("---------------------|------------------|-----------------\n");
+        for (Map<String, String> stringStringMap : infoList) {
+            System.out.printf("%-20s |", stringStringMap.get("fName") + " " + stringStringMap.get("lName"));
+            System.out.printf(" %-17s|", stringStringMap.get("pos"));
+            System.out.printf(" %-10s\n", stringStringMap.get("sep"));
+        }
+
+    }
 }
