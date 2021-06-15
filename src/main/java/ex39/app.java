@@ -22,7 +22,13 @@ public class app {
         infoList = comparison(infoList, "lName");
 
 
-        System.out.printf("%s", infoList.get(0).get("fName"));
+        System.out.printf("%s\n", infoList.get(0).get("fName"));
+        System.out.printf("%s\n", infoList.get(1).get("fName"));
+        System.out.printf("%s\n", infoList.get(2).get("fName"));
+        System.out.printf("%s\n", infoList.get(3).get("fName"));
+        System.out.printf("%s\n", infoList.get(4).get("fName"));
+        System.out.printf("%s\n", infoList.get(5).get("fName"));
+
 
 
     }
@@ -42,7 +48,7 @@ public class app {
 
         for(int i = 0; i < array.size(); i++){
            for(int j = 0; j < array.size() - 1; j++)
-            if(array.get(i).get(key).compareTo(array.get(j).get(key)) > 0){
+            if(array.get(i).get(key).compareTo(array.get(j).get(key)) < 0){
                 temp = array.get(i);
                 array.set(i, array.get(j));
                 array.set(j, temp);
